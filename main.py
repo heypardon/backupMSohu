@@ -60,7 +60,7 @@ def openurl(url):
     else:
         return res
 
-
+#做一次备份
 def backup(url, directory):
     
     content = openurl(url).read()    
@@ -129,7 +129,7 @@ def backup(url, directory):
         css_opener.write(conn.read())
         css_opener.close()       
 
-
+#根据间隔时间，url和备份目录这三个参数执行backup()进行备份
 def excuteBackup(interval = 60, url = "http://m.sohu.com", directory = "/tmp/backup"):
     if not os.path.exists(directory):
         os.makedirs(directory)   
